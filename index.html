@@ -13,15 +13,31 @@
 
 	<link rel="stylesheet" type="text/css" href="libs/jquery-ui-1.11.4/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="libs/jquery-ui-1.11.4/jquery-ui.theme.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>		
 	<div class="page_wrapper">
-		<div class="sidebar bordered_right">
-			<h1>Enter address</h1>
-			<input id="address" class="controls" type="text" placeholder="Search Box">
-			<input type="button" value="find" id="startSearch" onClick="geoApi.geocode()">
+		<div class="sidebar col-md-4">
+			<div class="row heading">
+				<div class="col-xs-12">
+					<h2>Solar panel tilt angle app <span class="label label-default pull-right">v.1.0</span></h2>
+				</div>
+			</div>
+			
+			<div class="row">
+			  <div class="col-xs-12">
+			    <div class="input-group">
+			      <span class="input-group-addon" id="sizing-addon1">
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+			      </span>
+			      <input id="address" type="text" class="form-control" placeholder="Enter the address of your solar panels...">
+			      <span class="input-group-btn">
+			        <button id="startSearch" class="btn btn-default" type="button" onClick="geoApi.geocode()">Go!</button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
+			</div><!-- /.row -->
 			<p>
 			  <label for="betta">Photo module angle:</label>
 			  <span id="betta" class="result"> -- </span>
@@ -43,7 +59,7 @@
 			</p>
 			
 		</div>
-		<div class="content">
+		<div class="content col-md-8">
 			<div id='map_canvas'></div>
 
 		</div>
