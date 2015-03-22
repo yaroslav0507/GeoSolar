@@ -44,7 +44,7 @@ function HoursMinutes(c) {
 
 
 function Declination(day){
-	return (23.45 * sind(360/365 * (284 + day))).toFixed(4) * 1;
+	return (23.45 * sind(360/365 * (284 + day)));
 }
 
 
@@ -63,10 +63,8 @@ function logDaytime(){
 }
 
 
-function betta(){
-	var arr1 = 		[],
-		startDay = 	80,
-		endDay = 	265;
+function Betta(startDay, endDay){
+	var arr1 = 		[];
 
 	for (var i = 0; i <= endDay - startDay; i++){
 		arr1[i] = Declination(i + startDay); 
@@ -85,4 +83,8 @@ function betta(){
 	var bet = LL - ToDeg(decl);
 
 	console.log("Betta: ", bet);
+}
+
+function init(){
+	//App.betta();
 }
