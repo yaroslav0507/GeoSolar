@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS</title>
+	<script src="functions.js"></script>
+</head>
+<body>			
+	<script type="text/javascript">
+
+	window.onload = init;
+
+	var ASHRAE = {
+		month: {
+			1 : { "E0" : 1209, "B" : 0.142, "C" : 0.058 }, 
+			2 : { "E0" : 1193, "B" : 0.144, "C" : 0.060 }, 
+			3 : { "E0" : 1164, "B" : 0.156, "C" : 0.071 }, 
+			4 : { "E0" : 1115, "B" : 0.180, "C" : 0.097 }, 
+			5 : { "E0" : 1084, "B" : 0.196, "C" : 0.121 }, 
+			6 : { "E0" : 1069, "B" : 0.205, "C" : 0.134 }, 
+			7 : { "E0" : 1066, "B" : 0.207, "C" : 0.136 }, 
+			8 : { "E0" : 1088, "B" : 0.201, "C" : 0.122 }, 
+			9 : { "E0" : 1131, "B" : 0.177, "C" : 0.092 }, 
+			10: { "E0" : 1172, "B" : 0.160, "C" : 0.073 }, 
+			11: { "E0" : 1199, "B" : 0.149, "C" : 0.063 }, 
+			12: { "E0" : 1212, "B" : 0.142, "C" : 0.057 }
+		}
+	}
+
+	var Customer = {
+		location : {
+			lat : 50.453668,
+			lon : 30.598411
+		},
+		LST : 15,
+		N 	: 80,
+		GMT	: 2,
+		DS  : function(){
+			if (Customer.N < 90 && Customer.N < 300)
+				return 1 ;	
+			else 
+				return 0;
+		},
+
+	}
+
+	var LL = Customer.location.lat;
+
+	var App = {
+
+		// Declination of the Sun
+		"decl" : Declination(Customer.N),
+
+		// True solar time
+		TST  : function(){
+			return Customer.LST + (LL - 15 * Customer.GMT)/15 - Customer.DS();
+		},
+
+		// Hour angle
+		h 	 : function(){
+			return 15 * (this.TST() - 12);
+		},
+
+		alpha: function(){
+			return ToDeg(sind(LL) * sind(this["decl"]) + cosd(LL) * cosd(this["decl"]) * cosd( this.h()));
+		},
+
+	}
+
+	function init(){
+		betta();
+	}
+	</script>
+</body>
+</html>
