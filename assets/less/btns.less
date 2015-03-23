@@ -1,0 +1,51 @@
+@import 'variables';
+
+.btn-search{
+	width: 19px;
+	height: 19px;
+	background: url(../img/icon-search.png) no-repeat;
+}
+.btn{
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-family: 'EXO', Helvetica, Sans-serif;
+	font-size: 17px;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	color: #FFF;
+	font-weight: 400;
+	width: @btnWidth;
+	&:hover{
+		color: #FFF;
+	}
+
+}
+@lightness: 3;
+.btn-blue{
+	background: @tLightBlue;
+	&:hover{
+		background: lighten(@tLightBlue, @lightness);
+	}
+}
+.btn-violet{
+	background: @tViolet;
+	&:hover{
+		background: lighten(@tViolet, @lightness);
+	}
+}
+.btn-pink{
+	background: @tPink;
+	&:hover{
+		background: lighten(@tPink, @lightness);
+	}
+}
+.btn-shadow{
+	@offset: 0;
+	margin: 0 0 @offset 0;
+	&:hover{
+		margin: @offset 0 0 0;
+		//box-shadow: none !important;
+	}
+}

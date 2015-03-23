@@ -1,0 +1,100 @@
+@import 'variables';
+
+.result{
+	color: #f6931f; 
+	font-weight:bold;
+}
+body{
+	background: #eee;
+	font-family: 'Open Sans', sans-serif;
+}
+html { height: 100% }
+body { height: 100%; margin: 0px; padding: 0px }
+#map_canvas { height: 100% }
+
+.page_wrapper{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0 auto;
+	background: #FFF;
+	overflow: hidden;
+}
+.content{
+	height: inherit;
+	float: left;
+	padding: 0;
+}
+.sidebar{
+	height: 100%;
+	float: left;
+}
+.bordered_right{
+	border-right: 1px solid #eee;
+}
+#map_canvas{
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	transform: translateZ(0px);
+	background-color: rgb(229, 227, 223);
+}
+.heading {
+	margin-top: 0;
+	h2{
+		display: block;
+	}
+}
+.inclination{
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	text-align: center;
+	background: @tGrey url(../img/pie.png) no-repeat center;
+	background-size: 100%;
+	border-radius: 50%;
+	position: relative;
+	.num_container{
+		  position: absolute;
+		  display: table;
+		  width: 120px;
+		  height: 120px;
+		  left: 0;
+		  right: 0;
+		  top: 0;
+		  bottom: 0;
+		  margin: auto;
+		  background: @tGrey;
+		  color: #FFF;
+		  border-radius: 50%;
+		  z-index: 1;
+		.num {
+		  font-weight: 700;
+		  font-size: 70px;
+		  display: table-cell;
+		  vertical-align: middle;
+		  padding-left: 14px;
+		  text-shadow: 4px 4px 6px #3A3A3A;
+		}	
+	}
+	.module_plain{
+		height: 2px;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    margin: auto;
+	    width: 83%;
+		background: #FFF;
+  		transition: transform 0.5s ease;
+  		box-shadow: 3px 3px 5px #363636;
+	}
+}
+.ui_row{
+	margin-bottom: 25px;
+}
+.glyphicon{
+	color: #F76054;
+  	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
