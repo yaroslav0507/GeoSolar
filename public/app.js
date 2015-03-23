@@ -55,19 +55,21 @@ var App = {
 	// },
 
 	// Optimal angle of a solar panel
+	decl : function(){
+		//Array for further calculation of min and max declination
+		var decPerDay =  Array();
+		var startDay = 	Customer.period.start,
+			endDay = 	Customer.period.end;
+		for (var i = 0; i <= endDay - startDay; i++){
+			decPerDay[i] = Declination(i + startDay); 
+		};
+		return decPerDay;
+	},
+	
 	betta: function(){
 
-		//Array for further calculation of min and max declination
-		var arr1 = 		[],
-			startDay = 	Customer.period.start,
-			endDay = 	Customer.period.end;
-
-		for (var i = 0; i <= endDay - startDay; i++){
-			arr1[i] = Declination(i + startDay); 
-		};
-
-		var minDecl = arr1.min(),
-			maxDecl = arr1.max();
+		var minDecl = this.decl().min(),
+			maxDecl = this.decl().max();
 
 		var decl 	= Math.acos(0.5 * (cosd(minDecl) + cosd(maxDecl)));
 
