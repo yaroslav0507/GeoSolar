@@ -79,30 +79,15 @@ var App = {
 	},
 
 	renderGraph: function(){
-		// $.plot("#plot",[{
-		// 	data: flotArray(App.decl()),
-		// 	lines: { show: true, fill: true },
-		// 	yaxis: {
-		// 		tickFormatter: function (v) {
-		// 			return v + " cm";
-		// 		}
-		// 	},
-		// 	legend: {
-		// 		position: "se"
-		// 	}
-		// }]);
 		var dataset = flotArray(App.decl());
 		$.plot("#plot",[{
 			data: flotArray(App.decl()),
-			lines: { show: true, fill: true },
-			yaxis: {
-				tickFormatter: function (v) {
-					return v + " cm";
-				}
+			lines: { 
+				show: true, 
+				fill: true,
+				//fillColor: 'rgba(51, 122, 183, 0.2);',
 			},
-			legend: {
-				position: "se"
-			}
+			
 		}]);
 	}
 

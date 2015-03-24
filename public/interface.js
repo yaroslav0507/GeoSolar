@@ -21,6 +21,7 @@ App.draw = function(){
   $('#to').val(dayToDate(Customer.period["end"]));
 
   $('.inclination .num').html(App.betta().toFixed() + "&deg;");
+
   $('.inclination .module_plain').css({
     'transform' : 'rotate(' + App.betta() + 'deg)'
   });
