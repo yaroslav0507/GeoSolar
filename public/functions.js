@@ -45,7 +45,7 @@ function HoursMinutes(c) {
 
 function DegsMinutes(c) {
     h = Math.floor(c);
-    m = Math.floor(60 * (c - h));
+    m = Math.floor(60 * (c - h)); 
     return h.toFixed(0) + "&deg; " + m.toFixed(0) + "'";
 }
 
@@ -92,6 +92,14 @@ function Betta(startDay, endDay){
 	console.log("Betta: ", bet);
 }
 
+
+function flotArray(e){
+    var arr = [];
+    for (var i = 0; i <= e.length - 1 ; i++) {
+        arr[i] = [i, e[i]];
+    };
+    return arr;
+}
 
 function dayToDate(c) {
     var dayNum = 0;

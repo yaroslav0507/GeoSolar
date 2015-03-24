@@ -21,12 +21,12 @@ body { height: 100%; margin: 0px; padding: 0px }
 	overflow: hidden;
 }
 .content{
-	height: inherit;
+	height: 100%;
 	float: left;
 	padding: 0;
 }
 .sidebar{
-	height: 100%;
+	min-height: 100%;
 	float: left;
 }
 .bordered_right{
@@ -98,7 +98,57 @@ body { height: 100%; margin: 0px; padding: 0px }
 	color: #F76054;
   	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
+
+/* columns of same height styles */
+.row-same-height {
+    display: table;
+    width: 100%;
+}
+.col-xs-height {
+    display: table-cell;
+    float: none !important;
+}
+
+@media (min-width: 768px) {
+    .col-sm-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+/* firefox fix */
+.img-responsive {
+    width: 100%;
+}
+
+/* vertical alignment styles */
+.col-top {
+    vertical-align:top;
+}
+.col-middle {
+    vertical-align:middle;
+}
+.col-bottom {
+    vertical-align:bottom;
+}
+.logo{
+	text-transform: uppercase;
+	span{
+		font-weight: 700;
+		color: @tBlue;
+	}
+}
 .sidebar_graph{
-	width: 100%;
-	height: 200px;
+	height: 250px;
 }

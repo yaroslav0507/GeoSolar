@@ -76,6 +76,34 @@ var App = {
 		bet = this.Lat - ToDeg(decl);
 
 		return Math.abs(bet);
+	},
+
+	renderGraph: function(){
+		// $.plot("#plot",[{
+		// 	data: flotArray(App.decl()),
+		// 	lines: { show: true, fill: true },
+		// 	yaxis: {
+		// 		tickFormatter: function (v) {
+		// 			return v + " cm";
+		// 		}
+		// 	},
+		// 	legend: {
+		// 		position: "se"
+		// 	}
+		// }]);
+		var dataset = flotArray(App.decl());
+		$.plot("#plot",[{
+			data: flotArray(App.decl()),
+			lines: { show: true, fill: true },
+			yaxis: {
+				tickFormatter: function (v) {
+					return v + " cm";
+				}
+			},
+			legend: {
+				position: "se"
+			}
+		}]);
 	}
 
 }

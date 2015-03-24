@@ -23,7 +23,9 @@ App.draw = function(){
   $('.inclination .num').html(App.betta().toFixed() + "&deg;");
   $('.inclination .module_plain').css({
     'transform' : 'rotate(' + App.betta() + 'deg)'
-  })
+  });
+
+  App.renderGraph();
 
 }
 
