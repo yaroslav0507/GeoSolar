@@ -28,7 +28,7 @@ body {
   padding: 0;
   margin: 0 auto;
   background: #FFF;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .content {
@@ -40,6 +40,7 @@ body {
 .sidebar {
   min-height: 100%;
   float: left;
+  background: #F7F7F7;
 }
 
 .bordered_right {
@@ -65,14 +66,19 @@ body {
 
 .inclination {
   width: 250px;
-  height: 250px;
   margin: 0 auto;
   text-align: center;
-  background: #494d4e url(../img/pie.png) no-repeat center;
+  background: #3e4444 url(../img/pie.png) no-repeat center;
   background-size: 100%;
   border: 6px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   position: relative;
+}
+
+.inclination:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
 }
 
 .inclination .num_container {
@@ -85,7 +91,7 @@ body {
   top: 0;
   bottom: 0;
   margin: auto;
-  background: #494d4e;
+  background-color: inherit;
   color: #FFF;
   border-radius: 50%;
   z-index: 1;
@@ -109,7 +115,7 @@ body {
   bottom: 0;
   margin: auto;
   width: 83%;
-  background: #FFF;
+  background: #FF4848;
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   box-shadow: 3px 3px 5px #363636;
@@ -184,6 +190,11 @@ body {
 .logo span {
   font-weight: 700;
   color: #337ab7;
+}
+
+.logo .label {
+  font-size: 10px;
+  margin: 10px 0;
 }
 
 .sidebar_graph {

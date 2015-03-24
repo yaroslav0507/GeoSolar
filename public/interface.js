@@ -89,4 +89,10 @@ $(function() {
       }
     });
 
+    $('.content').height($('.sidebar').height());
+
+    $(window).resize(function(){
+      $('.content').height($('.sidebar').height());
+      App.renderGraph();
+    })
 });

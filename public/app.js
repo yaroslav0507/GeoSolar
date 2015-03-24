@@ -70,12 +70,12 @@ var App = {
 
 		var minDecl = this.decl().min(),
 			maxDecl = this.decl().max();
+		// (minDecl < 0) ? minDecl = 0 : " ";
 
 		var decl 	= Math.acos(0.5 * (cosd(minDecl) + cosd(maxDecl)));
-
 		bet = this.Lat - ToDeg(decl);
 
-		return Math.abs(bet);
+		return bet;
 	},
 
 	renderGraph: function(){
