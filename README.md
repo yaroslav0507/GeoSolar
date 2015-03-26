@@ -1,1 +1,1 @@
-# AOG - Artel Outsoursing Group
+# GEOSOLAR - Web service for calculation of a perfect solar module tilt angle.
