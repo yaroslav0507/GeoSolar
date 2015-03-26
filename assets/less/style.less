@@ -8,6 +8,13 @@ body{
 	background: #eee;
 	font-family: 'Open Sans', sans-serif;
 }
+h4{
+	display: inline-block;
+}
+.checkbox.switch{
+	display: inline-block;
+	float: right;
+}
 html { height: 100% }
 body { height: 100%; margin: 0px; padding: 0px }
 #map_canvas { height: 100% }
@@ -17,13 +24,14 @@ body { height: 100%; margin: 0px; padding: 0px }
 	height: 100%;
 	padding: 0;
 	margin: 0 auto;
-	background: #FFF;
+	background: #EEEEEE;
 	overflow: auto;
 }
 .content{
-	height: 100%;
-	float: left;
-	padding: 0;
+  height: 100%;
+  padding-right: 0;
+  position: fixed;
+  right: 17px;
 }
 .sidebar{
 	min-height: 100%;
@@ -47,12 +55,13 @@ body { height: 100%; margin: 0px; padding: 0px }
 	}
 }
 .inclination{
-	width: 250px;
+	width: 55%;
 	margin: 0 auto;
 	text-align: center;
 	background: @tGrey url(../img/pie.png) no-repeat center;
 	background-size: 100%;
 	border: 6px solid rgba(255, 255, 255, 0.2);
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.75);
 	border-radius: 50%;
 	position: relative;
 	&:before{
@@ -93,11 +102,14 @@ body { height: 100%; margin: 0px; padding: 0px }
 	    margin: auto;
 	    width: 83%;
 		background: #FF4848;
-  		transition: transform 0.5s ease;
+  		transition: transform 1s ease;
   		box-shadow: 3px 3px 5px #363636;
 	}
 }
 .ui_row{
+	margin: 25px 0;
+}
+.input-group{
 	margin-bottom: 25px;
 }
 .glyphicon{
@@ -150,13 +162,22 @@ body { height: 100%; margin: 0px; padding: 0px }
 }
 .logo{
 	text-transform: uppercase;
+	position: relative;
 	span{
 		font-weight: 700;
 		color: @tBlue;
 	}
 	.label{
 		font-size: 10px;
-  		margin: 10px 0;
+  		margin: 3px 0;
+  		position: absolute;
+  		right: 0;
+  		bottom: 0;
+	}
+	small{
+		font-size: 14px;
+		text-transform: none;
+		margin-left: 15px;
 	}
 }
 .sidebar_graph{
@@ -165,5 +186,11 @@ body { height: 100%; margin: 0px; padding: 0px }
 .ui-slider{
 	.ui-widget-header{
 		background: @tBlue;
+	}
+}
+#centerPosition{
+	&:hover{
+		cursor: pointer;
+		opacity: 0.9;
 	}
 }
