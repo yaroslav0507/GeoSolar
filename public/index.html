@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>geoSolar</title>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 	<script type="text/javascript" src="libs/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+	<script src="libs/jquery-ui-1.11.4/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="libs/bootstrap.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.flot.min.js"></script>
 	<script src="functions.js"></script>
@@ -27,10 +30,10 @@
 				</div>
 			</div>
 			
-			<div class="row ui_row">
+			<div class="row">
 			  <div class="col-xs-12">
 			    <div class="input-group">
-			      <span class="input-group-addon" id="sizing-addon1">
+			      <span id="centerPosition" class="input-group-addon" id="sizing-addon1">
 					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
 			      </span>
 			      <input id="address" type="text" class="form-control" placeholder="Enter the address of your solar pannels...">
@@ -41,37 +44,37 @@
 			  </div>
 			</div>
 			<div class="row">
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-sm-6">
 					<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1">Lat&deg;</span>
 					  <input type="text" id="latitide" class="form-control">
 					</div>
 				</div>
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-sm-6">
 					<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1">Lng&deg;</span>
 					  <input type="text" id="longitude" class="form-control">
 					</div>
 				</div>
 			</div>
-			<div class="row ui_row">
+			<div class="row">
 				<div class="col-xs-12">
 					<h4>Work period of your solar module</h4>
 				</div>
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-sm-6">
 					<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1">From: </span>
 					  <input type="text" id="from" name="from" class="date form-control">
 					</div>
 				</div>
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-sm-6">
 					<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1">To: </span>
 					  <input type="text" id="to" name="to" class="date form-control">
 					</div>
 				</div>
 			</div>
-			<div class="row ui_row">
+			<div class="row">
 				<div class="col-xs-12">
 					<div id="slider-period"></div>
 				</div>
@@ -99,6 +102,11 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<h4>Daily declination graph</h4>
+					<div class="checkbox switch">
+					    <!-- <label>
+					      <input type="checkbox" id="switch" checked="checked"> Minimal zero
+					    </label> -->
+					  </div>
 					<div id="plot" class="sidebar_graph"></div>
 				</div>
 			</div>
