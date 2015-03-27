@@ -185,6 +185,7 @@ body {
 
 .logo {
   text-transform: uppercase;
+  position: relative;
 }
 
 .logo span {
@@ -192,9 +193,18 @@ body {
   color: #337ab7;
 }
 
+.logo small {
+  font-size: 16px;
+  text-transform: none;
+  margin-left: 14px;
+}
+
 .logo .label {
   font-size: 10px;
-  margin: 10px 0;
+  margin-bottom: 3px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .sidebar_graph {
