@@ -15,6 +15,9 @@ var Client = {
 		hack: function(){
 			// here will be a script of clients IP grab and getting an information about position by it.
 		},
+
+		// A method to get client position via HTML5 
+
 		get: function(){
 			var options = {
 				enableHightAccuracy: true,
@@ -46,62 +49,36 @@ var Client = {
 		start: 80,
 		end:   265
 	},
-	// LST : 15,
-	// N 	: 80,
-	// GMT	: function(){
-	// 	return Math.floor(Client.location.lng / 15);
-	// },
-	// DS  : function(){
-	// 	if (Client.N < 90 && Client.N < 300)
-	// 		return 1 ;	
-	// 	else 
-	// 		return 0;
-	// },
-	// "hemisphere" : "",
 }
 
+
 // App object - contains math logic of the application
-// var switcher = true;
 
 var App = {
 
-	// Declination of the Sun
-	//"decl" : Declination(Client.N),
+	// Get the work period declination array 
+	// for further calculation of min and max declination
 
-	// True solar time
-	// TST  : function(){
-	// 	return Client.LST + (this.Lat - 15 * Client.GMT())/15 - Client.DS();
-	// },
-
-	// // Hour angle
-	// h 	 : function(){
-	// 	return 15 * (this.TST() - 12);
-	// },
-
-	// alpha: function(){
-	// 	return ToDeg(sind(this.Lat) * sind(this["decl"]) + cosd(this.Lat) * cosd(this["decl"]) * cosd( this.h()));
-	// },
-
-	// Optimal angle of a solar panel
 	decl : function(){
-		//Array for further calculation of min and max declination
+
 		var decPerDay =  Array();
 		var startDay = 	Client.period.start,
 			endDay = 	Client.period.end;
+
 		for (var i = 0; i <= endDay - startDay; i++){
 			decPerDay[i] = Declination(i + startDay); 
-			// if (switcher) {
-				decPerDay[i] < 0 ? decPerDay[i] = 0 : " ";
-			// };
+			decPerDay[i] < 0 ? decPerDay[i] = 0 : " ";
 		};
+
 		return decPerDay;
 	},
 	
+	// Calculate the most suitable angle of PV cell
+
 	betta: function(){
 
 		var minDecl = this.decl().min(),
 			maxDecl = this.decl().max();
-		// (minDecl < 0) ? minDecl = 0 : " ";
 
 		var decl 	= Math.acos(0.5 * (cosd(minDecl) + cosd(maxDecl)));
 
@@ -110,14 +87,17 @@ var App = {
 		return bet;
 	},
 
+	// Render graphics of daily declination
+
 	renderGraph: function(){
+
 		var dataset = flotArray(App.decl());
+
 		$.plot("#plot",[{
 			data: flotArray(App.decl()),
 			lines: { 
 				show: true, 
 				fill: true,
-				//fillColor: 'rgba(51, 122, 183, 0.2);',
 			},
 			
 		}]);
@@ -125,35 +105,45 @@ var App = {
 
 }
 
+// geoApi object - for manipulations with location data and map canvas
+
 var geoApi = {
 
 	initialize: function(){
 
 		Client.location.get();
+
 		// Print initial information when client position is known
+
 		App.draw();
 
 		// Toggle autocompleete feature when document is ready
+
 		var input = document.getElementById('address');	
 		var autocomplete = new google.maps.places.Autocomplete(input);
 
-		// Creation of a coordinates for google map
+		// Create a coordinates for google map
+
 	    var geoLatlng = new google.maps.LatLng(lat, lng);
 	    var geoOptions = {
 	        zoom: Client.location.avialable ? 6 : 4,
 	        center: geoLatlng,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP
 	    }
-	    // Initializing new google map canvas
+
+	    // Initialize new google map canvas
+
 		map = new google.maps.Map(document.getElementById("map_canvas"), geoOptions);
 	   
 	},
 
 	geocode: function(){
 		var address = $('#address').val();
+
 		geocoder.geocode({
 			"address" : address
 		},
+		
 		function(results, status){
 			$.ajax({
 		    	url: 	"http://maps.googleapis.com/maps/api/geocode/json?address="+address+"&sensor=false",
