@@ -115,7 +115,6 @@ $(function() {
       App.draw();
     });
 
-
     // Animate manual mode switcher
     $('.additional').css({top: 0, opacity: 0}).delay(1500).animate({top: 25, opacity: 1}, 'slow');
 

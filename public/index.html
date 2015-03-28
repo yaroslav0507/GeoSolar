@@ -4,16 +4,17 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>geoSolar</title>
+	<title>Solar Panel Angle Calculator | GEOSOLAR</title>
+	<meta name="description" content="Solar Panel Angle Calculator tells you by location the optimum angle to get the best out of your system. The optimum angle varies throughout the year, depending on the work period of your solar pannel.">
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 	<script type="text/javascript" src="libs/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="libs/jquery-ui-1.11.4/jquery-ui.min.js"></script>
 	<script src="libs/jquery-ui-1.11.4/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="libs/bootstrap.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.flot.min.js"></script>
-	<script src="functions.js"></script>
-	<script src="app.js"></script>
-	<script src="interface.js"></script>
+	<script src="scripts/functions.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/interface.js"></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="libs/jquery-ui-1.11.4/jquery-ui.css">
@@ -23,7 +24,7 @@
 </head>
 <body>		
 	<div class="page_wrapper">
-		<div class="sidebar col-md-4">
+		<div class="sidebar col-sm-4">
 			<div class="row heading page-header">
 				<div class="col-xs-12 ">
 					<h2 class="logo">geo<span>solar</span><small>Solar Panel Angle Calculator</small><p class="label label-default pull-right">v.1.0</p></h2>
@@ -112,7 +113,7 @@
 			</div>
 
 		</div>
-		<div class="content col-md-8">
+		<div class="content col-sm-8 hidden-xs">
 			<div class="additional">
 				<button id='manualMomde'><span class="mode">Enable</span> manual mode</button>
 			</div>
@@ -120,7 +121,7 @@
 				<div class="cross_x"></div>
 				<div class="cross_y"></div>
 			</div>
-			<div class="crosshair_coords"></div>
+			<div class="crosshair_coords hidden"></div>
 			<div id='map_canvas'></div>
 		</div>
 	</div>	

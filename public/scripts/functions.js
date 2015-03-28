@@ -55,44 +55,7 @@ function Declination(day){
 }
 
 
-//Console Log functions
-function logDaytime(){
-	for (var i = 1; i <= 24; i++) {
-		Customer.LST = i;
-		if (App.alpha() < 0) {
-			var daytime = "night";
-		}
-		else var daytime = "day";
-		var hs = 1/15 * acosd(-tand(LL) * tand(App.decl()));
-
-		console.log("Time: ", i, " Alpha: ", App.alpha(), " ", daytime, "Hs :", hs);
-	};
-}
-
-
-function Betta(startDay, endDay){
-	var arr1 = 		[];
-
-	for (var i = 0; i <= endDay - startDay; i++){
-		arr1[i] = Declination(i + startDay); 
-	};
-
-	var minDecl = 	arr1.min(),
-		maxDecl = 	arr1.max();
-
-	console.log("Min dec: ", minDecl);
-	console.log("Max dec: ", maxDecl);
-
-	var decl = Math.acos(0.5 * (cosd(minDecl) + cosd(maxDecl)));
-
-	console.log("Decl :", ToDeg(decl));
-
-	var bet = LL - ToDeg(decl);
-
-	console.log("Betta: ", bet);
-}
-
-
+// Generate data aray suitable for building flot Graphics
 function flotArray(e){
     var arr = [];
     for (var i = 0; i <= e.length - 1 ; i++) {
@@ -101,6 +64,8 @@ function flotArray(e){
     return arr;
 }
 
+
+// Convert day number to MM DD format
 function dayToDate(c) {
     var dayNum = 0;
     if (31 >= c - dayNum) return "Jan " + (c - dayNum);
@@ -130,6 +95,8 @@ function dayToDate(c) {
     return "!!"
 }
 
+
+// Convert date in MM DD format to day number
 function dateToDay(c) {
     var dayNum = 0;
     if (c[0] == "Jan" && 31 >= c[1] - dayNum) return dayNum + c[1];
@@ -159,6 +126,7 @@ function dateToDay(c) {
     //return "!!"
 }
 
+// Register new jQuery function "clickToggle"
 (function($) {
     $.fn.clickToggle = function(func1, func2) {
         var funcs = [func1, func2];
@@ -172,7 +140,3 @@ function dateToDay(c) {
         return this;
     };
 }(jQuery));
-
-function init(){
-	//App.betta();
-}

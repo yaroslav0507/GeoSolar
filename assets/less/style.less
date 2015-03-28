@@ -1,0 +1,337 @@
+@import 'variables';
+
+.result{
+	color: #f6931f; 
+	font-weight:bold;
+}
+body{
+	background: #eee;
+	font-family: 'Open Sans', sans-serif;
+}
+h4{
+	display: inline-block;
+}
+.checkbox.switch{
+	display: inline-block;
+	float: right;
+}
+html { height: 100% }
+body { height: 100%; margin: 0px; padding: 0px }
+#map_canvas { height: 100% }
+
+.page_wrapper{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0 auto;
+	background: #EEEEEE;
+	overflow: auto;
+}
+.content{
+  height: 100%;
+  padding-right: 0;
+  position: fixed;
+  right: 17px;
+}
+.sidebar{
+	min-height: 100%;
+	float: left;
+	background: #F7F7F7;
+}
+.bordered_right{
+	border-right: 1px solid #eee;
+}
+#map_canvas{
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	transform: translateZ(0px);
+	background-color: rgb(229, 227, 223);
+}
+.heading {
+	margin-top: 0;
+	h2{
+		display: block;
+	}
+}
+.inclination{
+	width: 55%;
+	margin: 0 auto;
+	text-align: center;
+	background: #2D3445 url(../img/pie.png) no-repeat center;
+	background-size: 100%;
+	border: 6px solid rgba(255, 255, 255, 0.2);
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.75);
+	border-radius: 50%;
+	position: relative;
+	&:before{
+		content: '';
+		display: block;
+ 		padding-top: 100%; 
+	}
+	.num_container{
+		  position: absolute;
+		  display: table;
+		  width: 100%;
+		  height: 100%;
+		  left: 0;
+		  right: 0;
+		  top: 0;
+		  bottom: 0;
+		  margin: auto;
+		  color: #FFF;
+		  border-radius: 50%;
+		  z-index: 1;
+		  &:after{
+		  	content: '';
+		  	width: 120px;
+		  	height: 120px;
+		  	position: absolute;
+		  	left: 0;
+			  right: 0;
+			  top: 0;
+			  bottom: 0;
+			  margin: auto;
+			  background-color: #2D3445;
+			  border-radius: 50%;
+			  z-index: -1;
+		  }
+		.num {
+		  font-weight: 700;
+		  font-size: 70px;
+		  display: table-cell;
+		  vertical-align: middle;
+		  padding-left: 14px;
+		  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+		}	
+	}
+	.module_plain{
+			height: 2px;
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    margin: auto;
+	    width: 83%;
+			background: #FF4848;
+  		transition: transform 1s ease;
+  		box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+	}
+}
+.ui_row{
+	margin: 25px 0;
+}
+.input-group{
+	margin-bottom: 25px;
+}
+.glyphicon{
+	color: #F76054;
+  	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* columns of same height styles */
+.row-same-height {
+    display: table;
+    width: 100%;
+}
+.col-xs-height {
+    display: table-cell;
+    float: none !important;
+}
+
+@media (min-width: 768px) {
+    .col-sm-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+/* firefox fix */
+.img-responsive {
+    width: 100%;
+}
+
+/* vertical alignment styles */
+.col-top {
+    vertical-align:top;
+}
+.col-middle {
+    vertical-align:middle;
+}
+.col-bottom {
+    vertical-align:bottom;
+}
+.logo{
+	text-transform: uppercase;
+	position: relative;
+	span{
+		font-weight: 700;
+		color: @tBlue;
+	}
+	small{
+	  font-size: 16px;
+	  text-transform: none;
+	  margin-left: 14px;
+	}
+	.label{
+		font-size: 10px;
+  		margin: 3px 0;
+  		position: absolute;
+  		right: 0;
+  		bottom: 0;
+	}
+	small{
+		font-size: 14px;
+		text-transform: none;
+		margin-left: 15px;
+	}
+}
+.sidebar_graph{
+	height: 250px;
+}
+.ui-slider{
+	.ui-widget-header{
+		background: @tBlue;
+	}
+}
+#centerPosition{
+	&:hover{
+		cursor: pointer;
+		opacity: 0.9;
+	}
+}
+.btn-primary{
+	background-color: @tBlue;
+	border-color: @tBlue;
+	&:hover{
+		background-color: darken(@tBlue, 3%);
+		border-color: darken(@tBlue, 3%);	
+	}
+}
+@manualBtnColor: @tBlue;
+.additional{
+	  position: absolute;
+	  z-index: 1;
+	  top: 25px;
+	  right: 50%;
+	  margin-right: -131px;
+	  width: 262px;
+	  height: 50px;
+	  background: #EEE;
+	  border: 1px solid #ccc;
+	  box-shadow: 0 2px 0 #A0A0A0;
+	  border-radius: 5px;
+	  display: table;
+		button{
+				transition: background-color 0.3s, top 0.3s;
+			  background-color: @manualBtnColor;
+			  color: #FFF;
+			  display: table-cell;
+			  vertical-align: middle;
+			  margin: 15px;
+			  width: 240px;
+			  border: none;
+			  border-radius: 3px;
+			  box-shadow: 0 3px 0 darken(@manualBtnColor, 10%);
+			  &:hover{
+			  	transition: background-color 0.3s, top 0.3s;
+			  	background: lighten(@manualBtnColor, 3%);
+			  	box-shadow: 0 2px 0 darken(@manualBtnColor, 3%);
+				  top: 1px;
+				  position: relative;
+			  }
+			  &:active{
+			  	background: @manualBtnColor;
+			  	transition: background-color 0.3s;
+			  }
+			  &:focus{
+			  	border: none;
+			  	outline: none;
+			  }
+		}
+}
+@axisWidth: 2px;
+@axisSize: 45px;
+.crosshair{
+	display: none;
+	position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: @axisSize;
+  height: @axisSize;
+  margin: auto;
+  pointer-events: none;
+  &:after{
+  	content: '';
+	  display: block;
+	  width: @axisSize/4;
+	  height: @axisWidth;
+	  position: absolute;
+	  z-index: 3;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  top: 0;
+	  margin: auto;
+	  background-color: #FFF;
+  }
+  &:before{
+  	content: '';
+	  display: block;
+	  width: @axisWidth;
+	  height: @axisSize/4;
+	  position: absolute;
+	  z-index: 3;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  top: 0;
+	  margin: auto;
+	  background-color: #FFF;
+  }
+	.cross_x, .cross_y{
+		background-color: @tBlue;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		margin: auto;
+	}
+	.cross_x{
+		width: 100%;
+		height: @axisWidth;
+	}
+	.cross_y{
+		height: 100%;
+		width: @axisWidth; 
+	}
+}
+.crosshair_coords{
+  position: absolute;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: 0 1px 2px #2D3138;
+  bottom: 25px;
+  right: 20px;
+  display: inline-block;
+  z-index: 1;
+}
+
+@import 'screen';

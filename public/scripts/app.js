@@ -100,16 +100,12 @@ var App = {
 			},
 			
 		}]);
-	}
+	},
 
+	isManual: false,
 }
 
 // geoApi object - for manipulations with location data and map canvas
-		// $('#map_canvas').on('click', function(){
-		// 	var center = geoApi.manualMode();
-		// 	$('.crosshair_coords').text(center);
-		// 	console.log('asd');
-		// });
 
 var geoApi = {
 
@@ -133,17 +129,15 @@ var geoApi = {
 	        zoom: Client.location.avialable ? 6 : 4,
 	        center: geoLatlng,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
-	        clickable:false
 	    }
 
 	    // Initialize new google map canvas
 
 		map = new google.maps.Map(document.getElementById("map_canvas"), geoOptions);
 
-		var that = this;
 
 		google.maps.event.addListener(map, 'center_changed', function() {
-		if (true === true) {
+		if (App.isManual === true) {
 		   		var center = map.getCenter();
 	      		$('.crosshair_coords').text(center);
 
@@ -182,11 +176,10 @@ var geoApi = {
 		    });
 		});
 	},
-	isManual: '',
 };
 
-var map;
-var lat = Client.location.lat,
+var map,
+	lat = Client.location.lat,
 	lng = Client.location.lng;
 
 var geocoder = new google.maps.Geocoder();
