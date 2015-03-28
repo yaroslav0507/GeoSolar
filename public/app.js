@@ -51,7 +51,6 @@ var Client = {
 	},
 }
 
-
 // App object - contains math logic of the application
 
 var App = {
@@ -106,6 +105,11 @@ var App = {
 }
 
 // geoApi object - for manipulations with location data and map canvas
+		// $('#map_canvas').on('click', function(){
+		// 	var center = geoApi.manualMode();
+		// 	$('.crosshair_coords').text(center);
+		// 	console.log('asd');
+		// });
 
 var geoApi = {
 
@@ -128,13 +132,26 @@ var geoApi = {
 	    var geoOptions = {
 	        zoom: Client.location.avialable ? 6 : 4,
 	        center: geoLatlng,
-	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	        mapTypeId: google.maps.MapTypeId.ROADMAP,
+	        clickable:false
 	    }
 
 	    // Initialize new google map canvas
 
 		map = new google.maps.Map(document.getElementById("map_canvas"), geoOptions);
-	   
+
+		var that = this;
+
+		google.maps.event.addListener(map, 'center_changed', function() {
+		if (true === true) {
+		   		var center = map.getCenter();
+	      		$('.crosshair_coords').text(center);
+
+	      		Client.location.lat = center["k"].toFixed(4);
+	      		Client.location.lng = center["D"].toFixed(4);
+	      		App.draw();
+		   	};
+		});
 	},
 
 	geocode: function(){
@@ -151,9 +168,11 @@ var geoApi = {
 		    	success: function(res){
 		    		map.setCenter(res.results[0].geometry.location);
 		    		map.setZoom(14)
+		    		var marker = {};
 					var marker = new google.maps.Marker({
 						map : map,
-						position : res.results[0].geometry.location
+						position : res.results[0].geometry.location,
+						animation: google.maps.Animation.DROP
 					});
 					Client.location.lat = res.results[0].geometry.location.lat;
 					Client.location.lng = res.results[0].geometry.location.lng;
@@ -162,9 +181,8 @@ var geoApi = {
 		    	}
 		    });
 		});
-	}
-
-
+	},
+	isManual: '',
 };
 
 var map;

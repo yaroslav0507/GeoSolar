@@ -90,6 +90,7 @@ $(function() {
     });
 
 
+
     // Trigger search when 'Enter' button is hitted
     $('input#address').keydown(function(e){
       if (e.keyCode == 13){
@@ -114,6 +115,12 @@ $(function() {
       geoApi.initialize();
       App.draw();
     });
+
+    // $('#manualMomde').clickToggle(function(){
+    //   geoApi.isManual = true;
+    // },function(){
+    //   geoApi.isManual = false;
+    // });
 
     // Redraw some page parts when window is resized
     $(window).resize(function(){
