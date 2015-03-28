@@ -26,9 +26,13 @@ App.draw = function(){
     'transform' : 'rotate(' + App.betta() + 'deg)'
   });
 
-  $('.pv_cell').css({
-    'transform' : 'rotateX(' + App.betta() + 'deg) rotateY(0deg) rotateZ(0deg)',
-    'box-shadow' : '0px ' + -App.betta()/3 + 'px 3px rgba(0, 0, 0, 0.45)'
+  var visualAngle = 90 - Math.abs(App.betta());
+  $('#front').css({
+    'transform' : 'rotateX(' + visualAngle + 'deg) rotateY(0deg) rotateZ(0deg)',
+    // 'box-shadow' : '0px ' + -App.betta()/3 + 'px 3px rgba(0, 0, 0, 0.45)'
+  });
+  $('#side').css({
+    'transform' : 'rotateZ(' + visualAngle + 'deg)'
   });
 
   App.renderGraph();

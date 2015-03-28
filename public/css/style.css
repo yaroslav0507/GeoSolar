@@ -378,20 +378,34 @@ body {
   width: 2px;
 }
 
-.crosshair .pv_cell {
+.pv_cell {
+  height: 160px;
   position: absolute;
-  left: 55px;
-  top: -5px;
-  width: 30px;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform-origin: center center;
-  -ms-transform-origin: center center;
-  transform-origin: center center;
+  right: 25px;
+  bottom: 25px;
+  z-index: 3;
 }
 
-.crosshair .pv_cell img {
-  width: 100%;
+.pv_cell #side {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+  position: relative;
+  left: -160px;
+}
+
+.pv_cell #front {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+.pv_cell img {
+  height: 100%;
 }
 
 .crosshair_coords {
