@@ -323,6 +323,8 @@ body {
   height: 45px;
   margin: auto;
   pointer-events: none;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
 }
 
 .crosshair:after {
@@ -374,6 +376,22 @@ body {
 .crosshair .cross_y {
   height: 100%;
   width: 2px;
+}
+
+.crosshair .pv_cell {
+  position: absolute;
+  left: 55px;
+  top: -5px;
+  width: 30px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+
+.crosshair .pv_cell img {
+  width: 100%;
 }
 
 .crosshair_coords {

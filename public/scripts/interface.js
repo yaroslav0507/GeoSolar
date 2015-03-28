@@ -26,6 +26,11 @@ App.draw = function(){
     'transform' : 'rotate(' + App.betta() + 'deg)'
   });
 
+  $('.pv_cell').css({
+    'transform' : 'rotateX(' + App.betta() + 'deg) rotateY(0deg) rotateZ(0deg)',
+    'box-shadow' : '0px ' + -App.betta()/3 + 'px 3px rgba(0, 0, 0, 0.45)'
+  });
+
   App.renderGraph();
 
 }
@@ -44,14 +49,6 @@ $(function() {
         App.draw();
       }
     });
-
-    // $('.date').datepicker({
-    //   dateFormat : "M dd",
-    //   monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" ],
-    //   defaultDate: "+1w",
-    //   changeMonth: true,
-    //   numberOfMonths: 2,
-    // });
 
     $( "#from" ).datepicker({
       dateFormat : "M dd",
