@@ -26,13 +26,13 @@ App.draw = function(){
     'transform' : 'rotate(' + App.betta() + 'deg)'
   });
 
-  var visualAngle = 90 - Math.abs(App.betta());
-  $('#front').css({
-    'transform' : 'rotateX(' + visualAngle + 'deg) rotateY(0deg) rotateZ(0deg)',
-    // 'box-shadow' : '0px ' + -App.betta()/3 + 'px 3px rgba(0, 0, 0, 0.45)'
-  });
-  $('#side').css({
-    'transform' : 'rotateZ(' + visualAngle + 'deg)'
+  var visualAngle = (90 - Math.abs(App.betta()))*1.3;
+  // $('#front').css({
+  //   'transform' : 'rotateX(' + visualAngle + 'deg) rotateY(0deg) rotateZ(0deg)',
+  //   // 'box-shadow' : '0px ' + -App.betta()/3 + 'px 3px rgba(0, 0, 0, 0.45)'
+  // });
+  $('.pv_cell').css({
+    'transform' : 'rotateZ(' + visualAngle/2 + 'deg) rotateX(' + visualAngle/2 + 'deg) rotateY(' + -70 + 'deg)'
   });
 
   App.renderGraph();

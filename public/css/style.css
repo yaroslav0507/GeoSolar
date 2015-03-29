@@ -323,8 +323,6 @@ body {
   height: 45px;
   margin: auto;
   pointer-events: none;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
 }
 
 .crosshair:after {
@@ -378,34 +376,68 @@ body {
   width: 2px;
 }
 
-.pv_cell {
+.three_d_scene {
+  width: 89px;
   height: 160px;
   position: absolute;
-  right: 25px;
-  bottom: 25px;
+  right: 100px;
+  bottom: 50px;
   z-index: 3;
+  -webkit-perspective: 200px;
+  perspective: 200px;
 }
 
-.pv_cell #side {
+.pv_cell {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transform-origin: center bottom;
   -ms-transform-origin: center bottom;
   transform-origin: center bottom;
-  position: relative;
-  left: -160px;
 }
 
 .pv_cell #front {
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  -webkit-transform: translateZ(5px);
+  transform: translateZ(5px);
+}
+
+.pv_cell .side {
   -webkit-transform-origin: center bottom;
   -ms-transform-origin: center bottom;
   transform-origin: center bottom;
+  -webkit-transform: rotateY(90deg) translateX(-3px);
+  transform: rotateY(90deg) translateX(-3px);
+  background: #A3A3A3;
+  width: 6px;
+  height: 100%;
+  position: absolute;
+}
+
+.pv_cell .side.right {
+  right: -3px;
+}
+
+.pv_cell .side.left {
+  left: -3px;
+}
+
+.pv_cell .bottom {
+  width: 89px;
+  height: 6px;
+  background-color: #333;
+  position: absolute;
+  bottom: -3px;
+  left: 0px;
+  -webkit-transform: rotateX(-90deg) translateY(-3px);
+  transform: rotateX(-90deg) translateY(-3px);
 }
 
 .pv_cell img {
   height: 100%;
+  display: block;
+  position: absolute;
 }
 
 .crosshair_coords {
