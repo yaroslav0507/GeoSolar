@@ -126,6 +126,17 @@ function dateToDay(c) {
     //return "!!"
 }
 
+var debounce = function(fn, d){
+    var t;
+    return function(){
+        if(t){
+            clearTimeout(t);
+        }
+
+        t = setTimeout(fn, d)
+    }
+};
+
 // Register new jQuery function "clickToggle"
 (function($) {
     $.fn.clickToggle = function(func1, func2) {

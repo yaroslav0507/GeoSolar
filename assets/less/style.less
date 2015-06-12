@@ -106,7 +106,7 @@ body { height: 100%; margin: 0px; padding: 0px }
 		}	
 	}
 	.module_plain{
-			height: 2px;
+	    height: 2px;
 	    position: absolute;
 	    left: 0;
 	    right: 0;
@@ -114,7 +114,7 @@ body { height: 100%; margin: 0px; padding: 0px }
 	    bottom: 0;
 	    margin: auto;
 	    width: 83%;
-			background: #FF4848;
+		background: #FF4848;
   		transition: transform 1s ease;
   		box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 	}
@@ -265,8 +265,7 @@ body { height: 100%; margin: 0px; padding: 0px }
 @axisWidth: 2px;
 @axisSize: 45px;
 .crosshair{
-	display: none;
-	position: absolute;
+  position: absolute;
   z-index: 3;
   left: 0;
   right: 0;
@@ -332,11 +331,16 @@ body { height: 100%; margin: 0px; padding: 0px }
 	perspective: 200px;
 } 
 .pv_cell{
-	width: 100%;
+  width: 100%;
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
   transform-origin: center bottom;
+  -webkit-transition: transform .5s ease;
+  -moz-transition: transform .5s ease;
+  -ms-transition: transform .5s ease;
+  -o-transition: transform .5s ease;
+  transition: transform .5s ease;
 	#front{
 	  transform: translateZ(5px);
 	}

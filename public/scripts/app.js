@@ -9,12 +9,9 @@
 
 var Client = {
 	location : {
-		lat : 37.09024,
-		lng : -95.712891,
+		lat : 50.3630,
+		lng : 30.6012,
 		avialable : "",
-		hack: function(){
-			// here will be a script of clients IP grab and getting an information about position by it.
-		},
 
 		// A method to get client position via HTML5 
 
@@ -65,8 +62,8 @@ var App = {
 			endDay = 	Client.period.end;
 
 		for (var i = 0; i <= endDay - startDay; i++){
-			decPerDay[i] = Declination(i + startDay); 
-			decPerDay[i] < 0 ? decPerDay[i] = 0 : " ";
+			decPerDay[i] = Declination(i + startDay);
+			//decPerDay[i] < 0 ? decPerDay[i] = 0 : " ";
 		};
 
 		return decPerDay;
@@ -79,10 +76,10 @@ var App = {
 		var minDecl = this.decl().min(),
 			maxDecl = this.decl().max();
 
-		var decl 	= Math.acos(0.5 * (cosd(minDecl) + cosd(maxDecl)));
+		//var decl 	= Math.acos(0.5 * (cosd(minDecl) + cosd(maxDecl)));
+		var dec2 	= (minDecl + maxDecl)/2;
 
-		bet = Client.location.lat - ToDeg(decl);
-
+		bet = Client.location.lat - dec2;
 		return bet;
 	},
 
@@ -93,7 +90,7 @@ var App = {
 		var dataset = flotArray(App.decl());
 
 		$.plot("#plot",[{
-			data: flotArray(App.decl()),
+			data: dataset,
 			lines: { 
 				show: true, 
 				fill: true,
@@ -102,7 +99,7 @@ var App = {
 		}]);
 	},
 
-	isManual: false,
+	isManual: true,
 }
 
 // geoApi object - for manipulations with location data and map canvas
@@ -135,15 +132,19 @@ var geoApi = {
 
 		map = new google.maps.Map(document.getElementById("map_canvas"), geoOptions);
 
+		var getCenter = debounce(function(){
+			var center = map.getCenter();
+			$('.crosshair_coords').text(center);
+
+			Client.location.lat = center["A"].toFixed(4);
+			Client.location.lng = center["F"].toFixed(4);
+
+			App.draw();
+		}, 100);
 
 		google.maps.event.addListener(map, 'center_changed', function() {
-		if (App.isManual === true) {
-		   		var center = map.getCenter();
-	      		$('.crosshair_coords').text(center);
-
-	      		Client.location.lat = center["k"].toFixed(4);
-	      		Client.location.lng = center["D"].toFixed(4);
-	      		App.draw();
+			if (App.isManual) {
+				getCenter();
 		   	};
 		});
 	},

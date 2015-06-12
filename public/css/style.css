@@ -312,7 +312,6 @@ body {
 }
 
 .crosshair {
-  display: none;
   position: absolute;
   z-index: 3;
   left: 0;
@@ -396,6 +395,8 @@ body {
   -webkit-transform-origin: center bottom;
   -ms-transform-origin: center bottom;
   transform-origin: center bottom;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
 }
 
 .pv_cell #front {

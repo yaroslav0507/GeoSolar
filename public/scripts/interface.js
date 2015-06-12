@@ -27,10 +27,7 @@ App.draw = function(){
   });
 
   var visualAngle = (90 - Math.abs(App.betta()))*1.3;
-  // $('#front').css({
-  //   'transform' : 'rotateX(' + visualAngle + 'deg) rotateY(0deg) rotateZ(0deg)',
-  //   // 'box-shadow' : '0px ' + -App.betta()/3 + 'px 3px rgba(0, 0, 0, 0.45)'
-  // });
+
   $('.pv_cell').css({
     'transform' : 'rotateZ(' + visualAngle/2 + 'deg) rotateX(' + visualAngle/2 + 'deg) rotateY(' + -70 + 'deg)'
   });
@@ -105,7 +102,7 @@ $(function() {
           var scale = window.innerWidth/640;
           viewport = document.querySelector("meta[name=viewport]");
          
-          viewport.setAttribute('content', 'width=device-width, initial-scale='+scale+', user-scalable=0');
+          viewport.setAttribute('content', 'width=device-width, initial-scale='+scale+', user-scalable=1');
     } 
 
     
@@ -120,6 +117,7 @@ $(function() {
     $('.additional').css({top: 0, opacity: 0}).delay(1500).animate({top: 25, opacity: 1}, 'slow');
 
     // Switch manual mode on/off
+
     $('#manualMomde').clickToggle(function(){
       App.isManual = true;
       $('.crosshair').fadeToggle();
