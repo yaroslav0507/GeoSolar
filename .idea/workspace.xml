@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7084a10a-438f-44d9-952e-59573f02b4e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/app.js" afterPath="$PROJECT_DIR$/public/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/functions.js" afterPath="$PROJECT_DIR$/public/scripts/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/interface.js" afterPath="$PROJECT_DIR$/public/scripts/interface.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/less/style.less" afterPath="$PROJECT_DIR$/assets/less/style.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GeoSolar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +58,8 @@
       <file leaf-file-name="interface.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/interface.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52899575">
-              <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.55304104">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -264,7 +259,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecommerce" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
@@ -282,7 +277,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="22" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -358,8 +353,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/interface.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52899575">
-          <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.55304104">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
