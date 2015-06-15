@@ -119,13 +119,13 @@ $(function() {
     // Switch manual mode on/off
 
     $('#manualMomde').clickToggle(function(){
-      App.isManual = true;
-      $('.crosshair').fadeToggle();
-      $('#manualMomde .mode').text('Disable');
-    },function(){
       App.isManual = false;
       $('.crosshair').fadeToggle();
       $('#manualMomde .mode').text('Enable');
+    },function(){
+      App.isManual = true;
+      $('.crosshair').fadeToggle();
+      $('#manualMomde .mode').text('Disable');
     });
 
 
