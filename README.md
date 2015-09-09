@@ -17,7 +17,7 @@ To start the app open the terminal and clone the repo
 enter the app directory `cd path/to/cloned/application` 
 install node modules via <b>NPM</b>
 
-  `npm install`
+	`npm install`
   
 run gulp task `gulp watch`
 
