@@ -7,6 +7,9 @@ One of them is a quantity of solar energy that falls on a plane of PV cell.
 	
 <b>GEOSOLAR</b> is a web app that calculates the most suitable angle of a solar panel for your geolocation.
 
+### Interface
+
+![Interface of the application](http://cs612323.vk.me/u13228080/docs/47cee00c2b79/GeoSolar.png?extra=jlVhSbwIlKc5N24b_7sKgd53lhq97YJbaDGGkzBeFOjFHQL-O0nZ51_y3EfAcjHviIUA9e57_BIunQTWLIYWK2Fz-U29o_o)
 
 ### Start
 
