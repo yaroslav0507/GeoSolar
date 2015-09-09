@@ -1,6 +1,3 @@
-# GEOSOLAR - Web application calculating a perfect solar module tilt angle.
-This project is in early pre-release. 
-
 GEOSOLAR
 ===================================================================
 Power generation with the usage of photovoltaic cells has a quite unstable character and depends on many factors of the environment. One of them is a quantity of solar energy that falls on a plane of PV cell.
