@@ -19,7 +19,9 @@ install node modules via <b>NPM</b>
 
 	`npm install`
   
-run gulp task `gulp watch`
+run gulp task 
+	
+	`gulp watch`
 
 
 
