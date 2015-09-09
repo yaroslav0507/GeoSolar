@@ -1,6 +1,6 @@
 GEOSOLAR
 ===================================================================
-Power generation with the usage of <b>photovoltaic cells</b> has a quite unstable character and depends on many factors of the environment. 
+<b>Power generation</b> with the usage of <i>photovoltaic cells</i> has a quite unstable character and depends on many factors of the environment. 
 One of them is a quantity of solar energy that falls on a plane of PV cell.
 	The maximal <b>work efficiency</b> of the photovoltaic station is achieved when the inclination angle is calculated properly.
 	This application consists an algorithm for definition of the <b>optimal angle of the PV cell</b>. It depends on a geolocation and work period of the solar station.
