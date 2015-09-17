@@ -136,8 +136,8 @@ var geoApi = {
 			var center = map.getCenter();
 			$('.crosshair_coords').text(center);
 
-			Client.location.lat = center["A"].toFixed(4);
-			Client.location.lng = center["F"].toFixed(4);
+			Client.location.lat = center['H'].toFixed(4);
+			Client.location.lng = center['L'].toFixed(4);
 
 			App.draw();
 		}, 100);
