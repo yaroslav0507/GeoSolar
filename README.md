@@ -9,7 +9,7 @@ One of them is a quantity of solar energy that falls on a plane of PV cell.
 
 ### Interface
 
-![Interface of the application](http://cs612323.vk.me/u13228080/docs/47cee00c2b79/GeoSolar.png?extra=jlVhSbwIlKc5N24b_7sKgd53lhq97YJbaDGGkzBeFOjFHQL-O0nZ51_y3EfAcjHviIUA9e57_BIunQTWLIYWK2Fz-U29o_o)
+![Interface of the application](https://www.dropbox.com/s/eiw8d2s9f6x3fyd/solar.styleworks.com.ua.png?dl=1)
 
 ### Start
 
