@@ -136,8 +136,8 @@ var geoApi = {
 			var center = map.getCenter();
 			$('.crosshair_coords').text(center);
 
-			Client.location.lat = center['H'].toFixed(4);
-			Client.location.lng = center['L'].toFixed(4);
+			Client.location.lat = center.lat().toFixed(4);
+			Client.location.lng = center.lng().toFixed(4);
 
 			App.draw();
 		}, 100);
@@ -162,7 +162,7 @@ var geoApi = {
 		    	type: 	"POST",
 		    	success: function(res){
 		    		map.setCenter(res.results[0].geometry.location);
-		    		map.setZoom(14)
+		    		map.setZoom(14);
 		    		var marker = {};
 					var marker = new google.maps.Marker({
 						map : map,
