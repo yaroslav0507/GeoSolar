@@ -9,7 +9,9 @@ One of them is a quantity of solar energy that falls on a plane of PV cell.
 
 ### Interface
 
-![Interface of the application](https://www.dropbox.com/s/eiw8d2s9f6x3fyd/solar.styleworks.com.ua.png?dl=1)
+<img width="1776" alt="image" src="https://user-images.githubusercontent.com/6556178/214954687-12527823-f97f-4556-aaee-77b4a4ca265d.png">
+
+<!-- ![Interface of the application](https://www.dropbox.com/s/eiw8d2s9f6x3fyd/solar.styleworks.com.ua.png?dl=1) -->
 
 ### Start
 
